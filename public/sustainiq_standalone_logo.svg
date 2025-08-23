@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Main circle -->
+  <circle cx="50" cy="50" r="35" fill="#54de79"/>
+  
+  <!-- Leaf shape inside circle -->
+  <path d="M50 28 
+           C62 40, 68 58, 50 72
+           C32 58, 38 40, 50 28" 
+        fill="#333333"/>
+  
+  <!-- Q tail extending from circle -->
+  <path d="M72 72 L90 90" 
+        stroke="#54de79" 
+        stroke-width="18" 
+        stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:scale.com)",
+      "WebFetch(domain:glean.com)",
+      "WebFetch(domain:www.hubspot.com)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
