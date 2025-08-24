@@ -1,6 +1,6 @@
-# SustainIQ AI Website
+# Fluxara Website
 
-This is the official marketing and informational website for SustainIQ AI. It is a modern, responsive web application built with Vite, React, TypeScript, and Tailwind CSS.
+This is the official marketing and informational website for Fluxara. It is a modern, responsive web application built with Vite, React, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
@@ -15,12 +15,12 @@ Follow these instructions to set up the project for local development.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/ethiraj-sustainiq/sustainiq_website.git
+    git clone https://github.com/ethiraj-fluxara/fluxara_website.git
     ```
 
 2.  **Navigate to the project directory:**
     ```bash
-    cd sustainiq_website
+    cd fluxara_website
     ```
 
 3.  **Install the dependencies:**
@@ -54,7 +54,7 @@ This project is configured for continuous deployment to GitHub Pages whenever ch
 
 -   **`.github/workflows/jekyll-gh-pages.yml`**: Defines the CI/CD pipeline for building and deploying the site.
 -   **`vite.config.ts`**: Contains the Vite configuration. The `base` property is set to `'/'` to support the custom domain.
--   **`public/CNAME`**: This file contains the custom domain (`sustainiq.ai`) and is essential for GitHub Pages to route traffic correctly.
+-   **`public/CNAME`**: This file contains the custom domain (`fluxara.ai`) and is essential for GitHub Pages to route traffic correctly.
 -   **`public/.nojekyll`**: This empty file tells GitHub Pages to not use its default Jekyll build process, which is crucial for single-page applications like this one.
 
 ### Making Changes

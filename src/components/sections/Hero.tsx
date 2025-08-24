@@ -12,7 +12,7 @@ import {
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center bg-gradient-to-br from-slate-50 via-white to-gray-100 print:overflow-visible print:bg-white min-h-[85vh] sm:min-h-screen pt-16 sm:pt-20 lg:pt-24 safe-top overflow-hidden">
+    <section className="relative flex items-center bg-gradient-to-br from-slate-50 via-white to-gray-100 print:overflow-visible print:bg-white min-h-[70vh] pt-20 safe-top overflow-hidden">
         {/* Industrial background patterns */}
         <div className="pointer-events-none absolute inset-0">
           {/* Grid pattern suggesting industrial blueprints */}
@@ -38,7 +38,7 @@ export default function Hero() {
         </div>
 
         {/* Subtle floating elements - reduced and repositioned */}
-        <div className="pointer-events-none absolute top-20 right-20 h-32 w-32 animate-float rounded-full bg-success-green/10 blur-2xl print:hidden will-change-transform" />
+        <div className="pointer-events-none absolute top-20 right-20 h-32 w-32 animate-float rounded-full bg-orange-500/10 blur-2xl print:hidden will-change-transform" />
         <div
           className="pointer-events-none absolute bottom-20 left-20 h-24 w-24 animate-float rounded-full bg-tech-blue/8 blur-xl print:hidden will-change-transform"
           style={{ animationDelay: "1.2s" }}

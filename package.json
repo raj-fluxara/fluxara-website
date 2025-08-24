@@ -1,8 +1,8 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "fluxara-ai",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ethiraj-sustainiq.github.io/sustainiq_website",
+  "homepage": "https://fluxara.ai",
   "type": "module",
   "scripts": {
     "dev": "vite",

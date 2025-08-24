@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <img src="/sustainiq_logo.svg" alt="SustainIQ AI Logo" className="h-14" />
+              <img src="/fluxara_logo.svg" alt="Fluxara AI Logo" className="h-14" />
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Transforming enterprise data into intelligent action through advanced AI & 
@@ -46,8 +46,8 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3 text-muted-foreground">
                 <Mail className="h-4 w-4 mt-0.5 shrink-0" />
-                <a href="mailto:customer-care@sustainiq.ai" className="hover:text-foreground transition-colors">
-                  customer_care@sustainiq.ai
+                <a href="mailto:customer-care@fluxara.ai" className="hover:text-foreground transition-colors">
+                  customer_care@fluxara.ai
                 </a>
               </li>
               <li className="flex items-start space-x-3 text-muted-foreground">
@@ -58,7 +58,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start space-x-3 text-muted-foreground">
                 <Linkedin className="h-4 w-4 mt-0.5 shrink-0" />
-                <a href="https://linkedin.com/company/sustainiq-ai" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                <a href="https://linkedin.com/company/fluxara-ai" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
                   LinkedIn
                 </a>
               </li>
@@ -78,7 +78,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © 2024 SustainIQ AI. All rights reserved.
+            © 2024 Fluxara. All rights reserved.
           </div>
           <div className="flex space-x-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>

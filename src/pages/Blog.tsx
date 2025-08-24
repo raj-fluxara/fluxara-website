@@ -58,7 +58,7 @@ const Blog = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-4xl font-bold text-gradient mb-6">
-              SustainIQ AI Blog
+              Fluxara Blog
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Insights, innovations, and industry trends in sustainable AI technology

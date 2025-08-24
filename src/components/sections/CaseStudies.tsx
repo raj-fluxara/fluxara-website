@@ -12,7 +12,7 @@ const CaseStudies = () => {
       solution: "We deployed our unified platform to connect their real-time operational data to their library of regulatory documents. Our AI agents now continuously monitor operations against compliance rules, automatically analyzing and citing the relevant documentation to slash review times.",
       results: [
         { metric: "60%", description: "Reduction in review cycle time", icon: Clock, color: "tech-blue" },
-        { metric: "95%", description: "Accuracy in compliance detection", icon: TrendingUp, color: "success-green" },
+        { metric: "95%", description: "Accuracy in compliance detection", icon: TrendingUp, color: "orange" },
         { metric: "24/7", description: "Continuous monitoring capability", icon: Database, color: "electric-purple" }
       ],
       quote: "The platform transformed our regulatory workflow from a manual, error-prone process to an intelligent, automated system that scales with our growth.",
@@ -26,7 +26,7 @@ const CaseStudies = () => {
       results: [
         { metric: "475GB", description: "Daily SCADA & historian data", icon: Database, color: "tech-blue" },
         { metric: "<1s", description: "Real-time response latency", icon: Clock, color: "electric-purple" },
-        { metric: "30%", description: "Improved operational efficiency", icon: TrendingUp, color: "success-green" }
+        { metric: "30%", description: "Improved operational efficiency", icon: TrendingUp, color: "orange" }
       ],
       quote: "This platform gives us unprecedented visibility into our operations, enabling data-driven decisions that directly impact our bottom line.",
       role: "CTO, Digital Operations"
@@ -40,9 +40,10 @@ const CaseStudies = () => {
           <div className="max-w-3xl">
             <h2 className="text-3xl lg:text-4xl font-light leading-tight mb-4">
               Two real deployments,
-              <span className="font-semibold text-slate-900"> measurable results</span>
+              <span className="font-semibold text-orange-500"> measurable</span>
+              <span className="font-semibold text-slate-900"> results</span>
             </h2>
-            <div className="w-16 h-1 bg-electric-purple mb-6"></div>
+            <div className="w-16 h-1 bg-orange-500 mb-6"></div>
             <p className="text-lg text-slate-600 leading-relaxed font-light">
               Here's what happened when energy companies stopped accepting "that's just how things work" and demanded better.
             </p>
@@ -62,7 +63,7 @@ const CaseStudies = () => {
                   <div className="space-y-4">
                     <div className="flex flex-wrap items-center gap-4">
                       <h3 className="text-3xl lg:text-4xl font-bold">{study.company}</h3>
-                      <Badge variant="outline" className="border-tech-blue text-tech-blue text-sm px-3 py-1">
+                      <Badge variant="outline" className="border-orange-500 text-orange-600 text-sm px-3 py-1">
                         {study.industry}
                       </Badge>
                     </div>
@@ -80,7 +81,7 @@ const CaseStudies = () => {
                     </div>
                   </div>
                   
-                  <blockquote className="border-l-4 border-tech-blue pl-6 py-4 bg-muted/30 rounded-r-lg">
+                  <blockquote className="border-l-4 border-orange-500 pl-6 py-4 bg-muted/30 rounded-r-lg">
                     <p className="italic text-lg lg:text-xl font-medium leading-relaxed">"{study.quote}"</p>
                     <footer className="mt-4 text-base text-muted-foreground">
                       — {study.role}, {study.company}
@@ -95,26 +96,11 @@ const CaseStudies = () => {
                     {study.results.map((result, idx) => (
                       <div key={idx} className="group">
                         <div className="flex items-start space-x-4 p-6 bg-white/60 backdrop-blur-sm rounded-2xl hover:bg-white/80 transition-colors duration-300">
-                          <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${
-                            result.color === 'tech-blue' ? 'from-tech-blue/20 to-tech-blue/40' :
-                            result.color === 'electric-purple' ? 'from-electric-purple/20 to-electric-purple/40' :
-                            result.color === 'success-green' ? 'from-success-green/20 to-success-green/40' :
-                            'from-warning-amber/20 to-warning-amber/40'
-                          } flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                            <result.icon className={`h-6 w-6 ${
-                              result.color === 'tech-blue' ? 'text-tech-blue' :
-                              result.color === 'electric-purple' ? 'text-electric-purple' :
-                              result.color === 'success-green' ? 'text-success-green' :
-                              'text-warning-amber'
-                            }`} />
+                          <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                            <result.icon className="h-6 w-6 text-orange-600" />
                           </div>
                           <div className="flex-1">
-                            <div className={`text-3xl font-bold ${
-                              result.color === 'tech-blue' ? 'text-tech-blue' :
-                              result.color === 'electric-purple' ? 'text-electric-purple' :
-                              result.color === 'success-green' ? 'text-success-green' :
-                              'text-warning-amber'
-                            }`}>{result.metric}</div>
+                            <div className="text-3xl font-bold text-orange-500">{result.metric}</div>
                             <div className="text-sm lg:text-base text-muted-foreground mt-1">{result.description}</div>
                           </div>
                         </div>

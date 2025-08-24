@@ -162,7 +162,7 @@ export default function PrototypeDashboard() {
               <div className="w-16 h-16 bg-success-green rounded-full flex items-center justify-center animate-pulse">
                 <Zap className="w-8 h-8 text-white animate-spin" />
               </div>
-              <span className="text-sm text-muted-foreground">SustainIQ AI</span>
+              <span className="text-sm text-muted-foreground">Fluxara</span>
             </div>
           </div>
 
@@ -780,7 +780,7 @@ export default function PrototypeDashboard() {
                     <Button className="w-full" variant="outline">Generate Audit-Ready Report</Button>
                     <a
                       className="w-full inline-flex items-center justify-center rounded-md px-3 py-2 bg-gradient-primary text-primary-foreground hover:opacity-90 group"
-                      href="mailto:ethiraj.k@sustainiq.ai?subject=ROI%20Assessment&body=We%20would%20like%20a%20custom%20ROI%20projection%20for%20assets%20X%2FY%2FZ."
+                      href="mailto:ethiraj.k@fluxara.ai?subject=ROI%20Assessment&body=We%20would%20like%20a%20custom%20ROI%20projection%20for%20assets%20X%2FY%2FZ."
                     >
                       Get Free ROI Assessment
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

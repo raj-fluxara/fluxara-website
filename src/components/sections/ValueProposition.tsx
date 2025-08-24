@@ -7,25 +7,25 @@ const ValueProposition = () => {
       icon: Brain,
       title: "Operational Intelligence Platform",
       description: "Our platform doesn't just analyze data; it connects your SCADA systems with OEM manuals and maintenance procedures. By combining real-time telemetry with equipment documentation, we deliver insights with true operational context.",
-      gradient: "from-light-green to-green-accent"
+      gradient: "from-orange-50 to-orange-100"
     },
     {
       icon: Gauge,
       title: "From Alert to Work Order in Minutes",
       description: "Transform equipment alarms into actionable work plans. We process your historian and SCADA data in real-time, automatically surfacing the correct maintenance procedure from your documentation library.",
-      gradient: "from-green-accent to-light-green"
+      gradient: "from-orange-100 to-orange-50"
     },
     {
       icon: Database,
       title: "Operations Data + Maintenance Procedures",
       description: "We connect to your existing infrastructure. Our platform integrates with Wonderware, GE, Honeywell SCADA systems and your document repositories, creating a single source of truth for operational and procedural knowledge.",
-      gradient: "from-light-green to-electric-purple"
+      gradient: "from-orange-50 to-slate-100"
     },
     {
       icon: Lock,
       title: "Environmental Permit Compliance",
       description: "Achieve continuous compliance monitoring. Our platform monitors your emissions and operational data against EPA permits and safety regulations, automatically flagging deviations and generating audit-ready reports for regulatory agencies.",
-      gradient: "from-warning-amber to-green-accent"
+      gradient: "from-orange-200 to-orange-100"
     }
   ];
 

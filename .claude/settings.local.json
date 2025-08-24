@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:scale.com)",
       "WebFetch(domain:glean.com)",
-      "WebFetch(domain:www.hubspot.com)"
+      "WebFetch(domain:www.hubspot.com)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
