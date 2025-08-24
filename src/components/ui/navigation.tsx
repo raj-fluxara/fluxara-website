@@ -17,22 +17,22 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#solutions" className="text-muted-foreground hover:text-primary font-bold transition-colors">
+            <a href="/#solutions" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
               Solutions
             </a>
-            <a href="#case-studies" className="text-muted-foreground hover:text-primary font-bold transition-colors">
+            <a href="/#case-studies" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
               Case Studies
             </a>
-            <a href="#technology" className="text-muted-foreground hover:text-primary font-bold transition-colors">
+            <a href="/#technology" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
               Technology
             </a>
-            <Link to="/blog" className="text-muted-foreground hover:text-primary font-bold transition-colors">
+            <Link to="/blog" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
               Blog
             </Link>
-            <Link to="/platform-preview" className="text-muted-foreground hover:text-primary font-bold transition-colors">
+            <Link to="/platform-preview" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
               Platform Preview
             </Link>
-            <a href="#contact" className="text-muted-foreground hover:text-primary font-bold transition-colors">
+            <a href="/#contact" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
               Contact
             </a>
           </div>
@@ -55,13 +55,13 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <nav className="flex flex-col h-full pt-8 space-y-4">
-                  <Link to="/" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Home</Link>
-                  <a href="/#solutions" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Solutions</a>
-                  <a href="/#case-studies" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Case Studies</a>
-                  <a href="/#technology" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Technology</a>
-                  <Link to="/blog" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Blog</Link>
-                  <Link to="/platform-preview" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Platform Preview</Link>
-                  <a href="/#contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Contact</a>
+                  <Link to="/" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Home</Link>
+                  <a href="/#solutions" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Solutions</a>
+                  <a href="/#case-studies" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Case Studies</a>
+                  <a href="/#technology" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Technology</a>
+                  <Link to="/blog" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Blog</Link>
+                  <Link to="/platform-preview" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Platform Preview</Link>
+                  <a href="/#contact" onClick={() => setIsOpen(false)} className="text-lg font-semibold text-slate-700 hover:text-orange-500 transition-colors">Contact</a>
                   <div className="pt-8">
                     <a href="mailto:ethiraj.k@fluxara.ai?subject=Inquiry about Fluxara AI Platform&body=Hello, I saw your website and I'm interested in learning more about your AI platform. I'd like to schedule a time to discuss an ROI assessment.">
                       <Button className="w-full bg-orange-500 text-white hover:bg-orange-600 transition-colors">

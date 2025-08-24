@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const CallToAction = () => {
   return (
-    <section className="py-24 bg-gradient-hero relative overflow-hidden">
+    <section className="py-16 bg-gradient-hero relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-20 w-40 h-40 bg-slate-400/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>

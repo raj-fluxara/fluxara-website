@@ -86,7 +86,7 @@ function statusPill(status: AssetStatus) {
   switch (status) {
     case "normal":
     case "operational":
-      return { className: "bg-green-500 text-white", icon: <CheckCircle className="h-4 w-4" /> }
+      return { className: "bg-orange-500 text-white", icon: <CheckCircle className="h-4 w-4" /> }
     case "warning":
       return { className: "bg-yellow-500 text-black", icon: <Activity className="h-4 w-4" /> }
     case "alert":
@@ -137,8 +137,8 @@ export default function PrototypeDashboard() {
 
           <div className="flex items-center justify-center space-x-8">
             <div className="flex flex-col items-center space-y-2">
-              <div className="w-16 h-16 bg-success-green/20 rounded-full flex items-center justify-center animate-pulse">
-                <Activity className="w-8 h-8 text-success-green animate-bounce" />
+              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center animate-pulse">
+                <Activity className="w-8 h-8 text-orange-600 animate-bounce" />
               </div>
               <span className="text-sm text-muted-foreground">Data Stream</span>
             </div>
@@ -148,8 +148,8 @@ export default function PrototypeDashboard() {
               </svg>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <div className="w-16 h-16 bg-success-green/20 rounded-full flex items-center justify-center animate-pulse">
-                <FileText className="w-8 h-8 text-success-green animate-bounce" />
+              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center animate-pulse">
+                <FileText className="w-8 h-8 text-orange-600 animate-bounce" />
               </div>
               <span className="text-sm text-muted-foreground">Analysis</span>
             </div>
@@ -159,7 +159,7 @@ export default function PrototypeDashboard() {
               </svg>
             </div>
             <div className="flex flex-col items-center space-y-2">
-              <div className="w-16 h-16 bg-success-green rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
                 <Zap className="w-8 h-8 text-white animate-spin" />
               </div>
               <span className="text-sm text-muted-foreground">Fluxara</span>
@@ -168,7 +168,7 @@ export default function PrototypeDashboard() {
 
           <div className="w-64 mx-auto">
             <div className="w-full bg-muted rounded-full h-2">
-              <div className="bg-success-green h-2 rounded-full animate-pulse" style={{ width: "75%" }} />
+              <div className="bg-orange-500 h-2 rounded-full animate-pulse" style={{ width: "75%" }} />
             </div>
           </div>
         </div>
@@ -222,7 +222,7 @@ export default function PrototypeDashboard() {
                 
                 <button
                   onClick={() => setScreen("compliance")}
-                  className="flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-success-green text-white shadow-lg"
+                  className="flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-200 bg-orange-500 text-white shadow-lg"
                 >
                   <Shield className="h-5 w-5" />
                   <span>Compliance Monitoring</span>
@@ -236,10 +236,10 @@ export default function PrototypeDashboard() {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Compliance Score</CardTitle>
-                <CheckCircle className="h-4 w-4 text-green-500" />
+                <CheckCircle className="h-4 w-4 text-orange-500" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold text-green-600">98.2%</div>
+                <div className="text-2xl font-bold text-orange-600">98.2%</div>
                 <p className="text-xs text-muted-foreground">+2.1% from last month</p>
               </CardContent>
             </Card>
@@ -284,12 +284,12 @@ export default function PrototypeDashboard() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-orange-50 border border-orange-200 rounded-lg">
                     <div>
-                      <p className="font-medium text-green-800">Air Quality Permit #AQ-2024-001</p>
-                      <p className="text-sm text-green-600">NOx Emissions: 85% of limit</p>
+                      <p className="font-medium text-orange-800">Air Quality Permit #AQ-2024-001</p>
+                      <p className="text-sm text-orange-600">NOx Emissions: 85% of limit</p>
                     </div>
-                    <Badge className="bg-green-500 text-white">
+                    <Badge className="bg-orange-500 text-white">
                       <CheckCircle className="h-3 w-3 mr-1" />
                       Compliant
                     </Badge>
@@ -327,23 +327,23 @@ export default function PrototypeDashboard() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center p-3 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-orange-50 border border-orange-200 rounded-lg">
                     <div>
-                      <p className="font-medium text-green-800">OSHA 29 CFR 1910.147</p>
-                      <p className="text-sm text-green-600">Lockout/Tagout Procedures</p>
+                      <p className="font-medium text-orange-800">OSHA 29 CFR 1910.147</p>
+                      <p className="text-sm text-orange-600">Lockout/Tagout Procedures</p>
                     </div>
-                    <Badge className="bg-green-500 text-white">
+                    <Badge className="bg-orange-500 text-white">
                       <CheckCircle className="h-3 w-3 mr-1" />
                       100%
                     </Badge>
                   </div>
                   
-                  <div className="flex justify-between items-center p-3 bg-green-50 border border-green-200 rounded-lg">
+                  <div className="flex justify-between items-center p-3 bg-orange-50 border border-orange-200 rounded-lg">
                     <div>
-                      <p className="font-medium text-green-800">API 570 Inspection</p>
-                      <p className="text-sm text-green-600">Piping Inspection Code</p>
+                      <p className="font-medium text-orange-800">API 570 Inspection</p>
+                      <p className="text-sm text-orange-600">Piping Inspection Code</p>
                     </div>
-                    <Badge className="bg-green-500 text-white">
+                    <Badge className="bg-orange-500 text-white">
                       <CheckCircle className="h-3 w-3 mr-1" />
                       98%
                     </Badge>
@@ -379,7 +379,7 @@ export default function PrototypeDashboard() {
                     <YAxis tick={{ fontSize: 12 }} />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="temperature" stroke="#10b981" strokeWidth={2} name="NOx Emissions (ppm)" />
+                    <Line type="monotone" dataKey="temperature" stroke="#f97316" strokeWidth={2} name="NOx Emissions (ppm)" />
                     <Line type="monotone" dataKey="pressure" stroke="#3b82f6" strokeWidth={2} name="SO2 Emissions (ppm)" />
                     <Line type="monotone" dataKey="flow" stroke="#f59e0b" strokeWidth={1} strokeDasharray="5 5" name="Permit Limit" />
                   </LineChart>
@@ -397,7 +397,7 @@ export default function PrototypeDashboard() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-start space-x-3 p-3 bg-muted/50 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
                   <div>
                     <p className="font-medium text-sm">Emissions Report Generated</p>
                     <p className="text-xs text-muted-foreground">EPA Form 1234 - Monthly NOx Report</p>
@@ -454,7 +454,7 @@ export default function PrototypeDashboard() {
                 </div>
                 <div className="pt-4 border-t">
                   <p className="text-sm text-muted-foreground mb-2">Cost Savings This Quarter</p>
-                  <p className="text-2xl font-bold text-green-600">$124,000</p>
+                  <p className="text-2xl font-bold text-orange-600">$124,000</p>
                   <p className="text-xs text-muted-foreground">90% reduction in manual compliance reporting</p>
                 </div>
               </CardContent>
@@ -544,7 +544,7 @@ export default function PrototypeDashboard() {
                       <XAxis dataKey="time" tick={{ fontSize: 10 }} />
                       <YAxis tick={{ fontSize: 10 }} />
                       <Tooltip />
-                      <Line type="monotone" dataKey="temperature" stroke="#ef4444" strokeWidth={2} name="Vibration (mm/s)" />
+                      <Line type="monotone" dataKey="temperature" stroke="#f97316" strokeWidth={2} name="Vibration (mm/s)" />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -575,7 +575,7 @@ export default function PrototypeDashboard() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-600" />
+                <CheckCircle className="h-5 w-5 text-orange-600" />
                 Recommended Actions
               </CardTitle>
               <CardDescription>Immediate steps to prevent failure</CardDescription>
@@ -614,7 +614,7 @@ export default function PrototypeDashboard() {
                     <p className="text-sm text-muted-foreground">Preventive action vs. failure cost</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-2xl font-bold text-green-600">$48,000</p>
+                    <p className="text-2xl font-bold text-orange-600">$48,000</p>
                     <p className="text-sm text-muted-foreground">Potential savings</p>
                   </div>
                 </div>
@@ -629,7 +629,7 @@ export default function PrototypeDashboard() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Button className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90">
+                <Button className="w-full bg-orange-500 text-white hover:opacity-90">
                   Schedule Emergency Maintenance
                 </Button>
                 <Button className="w-full" variant="outline">
@@ -708,7 +708,7 @@ export default function PrototypeDashboard() {
                 {/* Actions */}
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg text-green-600">Recommended Actions</CardTitle>
+                    <CardTitle className="text-lg text-orange-600">Recommended Actions</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3 text-sm">
                     <div className="p-3 bg-red-50 border-l-4 border-red-500">
@@ -779,7 +779,7 @@ export default function PrototypeDashboard() {
                     <Button className="w-full" variant="destructive">Schedule Maintenance</Button>
                     <Button className="w-full" variant="outline">Generate Audit-Ready Report</Button>
                     <a
-                      className="w-full inline-flex items-center justify-center rounded-md px-3 py-2 bg-gradient-primary text-primary-foreground hover:opacity-90 group"
+                      className="w-full inline-flex items-center justify-center rounded-md px-3 py-2 bg-orange-500 text-white hover:opacity-90 group"
                       href="mailto:ethiraj.k@fluxara.ai?subject=ROI%20Assessment&body=We%20would%20like%20a%20custom%20ROI%20projection%20for%20assets%20X%2FY%2FZ."
                     >
                       Get Free ROI Assessment
@@ -837,7 +837,7 @@ export default function PrototypeDashboard() {
                 onClick={() => setScreen("dashboard")}
                 className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                   screen === "dashboard" 
-                    ? "bg-success-green text-white shadow-lg" 
+                    ? "bg-orange-500 text-white shadow-lg" 
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
@@ -849,7 +849,7 @@ export default function PrototypeDashboard() {
                 onClick={() => handleInvestigate(assets[0])}
                 className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                   screen === "report" || screen === "investigation" || screen === "diagnostic"
-                    ? "bg-success-green text-white shadow-lg" 
+                    ? "bg-orange-500 text-white shadow-lg" 
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
@@ -861,7 +861,7 @@ export default function PrototypeDashboard() {
                 onClick={() => setScreen("compliance")}
                 className={`flex items-center space-x-3 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
                   screen === "compliance" 
-                    ? "bg-success-green text-white shadow-lg" 
+                    ? "bg-orange-500 text-white shadow-lg" 
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
               >
@@ -879,8 +879,8 @@ export default function PrototypeDashboard() {
             <Card className="bg-gradient-card border-border shadow-glow">
               <CardContent className="p-6 text-center">
                 <div className="space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-success-green/20 flex items-center justify-center mx-auto">
-                    <Zap className="h-8 w-8 text-success-green" />
+                  <div className="w-16 h-16 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto">
+                    <Zap className="h-8 w-8 text-orange-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-foreground mb-2">Experience AI-Powered Equipment Diagnosis</h3>
@@ -986,7 +986,7 @@ export default function PrototypeDashboard() {
                         <CartesianGrid stroke="hsl(var(--border))" />
                         <Legend wrapperStyle={{ color: "hsl(var(--muted-foreground))" }} />
                         <Line type="monotone" dataKey="temperature" stroke="var(--chart-1, #33475b)" strokeWidth={2} />
-                        <Line type="monotone" dataKey="pressure"    stroke="var(--chart-2, #54de79)" strokeWidth={2} />
+                        <Line type="monotone" dataKey="pressure"    stroke="var(--chart-2, #f97316)" strokeWidth={2} />
                   </LineChart>
                 </ResponsiveContainer>
               </div>

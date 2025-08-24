@@ -12,7 +12,7 @@ import {
 
 export default function Hero() {
   return (
-    <section className="relative flex items-center bg-gradient-to-br from-slate-50 via-white to-gray-100 print:overflow-visible print:bg-white min-h-[70vh] pt-20 safe-top overflow-hidden">
+    <section className="relative flex items-center bg-gradient-to-br from-slate-50 via-white to-gray-100 print:overflow-visible print:bg-white min-h-[70vh] sm:min-h-[70vh] pt-24 sm:pt-20 safe-top overflow-hidden">
         {/* Industrial background patterns */}
         <div className="pointer-events-none absolute inset-0">
           {/* Grid pattern suggesting industrial blueprints */}
@@ -54,7 +54,14 @@ export default function Hero() {
                
                {/* Varied typography hierarchy */}
                <div className="space-y-5 mb-10">
-                 <div className="space-y-3">
+                 <div className="space-y-4">
+                   {/* Platform identifier - similar to HubSpot */}
+                   <div className="inline-block">
+                     <span className="text-sm font-bold text-orange-600 tracking-wider uppercase">
+                       FLUXARA INDUSTRIAL AI PLATFORM
+                     </span>
+                   </div>
+                   
                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.1] tracking-tight">
                     Turn industrial data into
                     <br />

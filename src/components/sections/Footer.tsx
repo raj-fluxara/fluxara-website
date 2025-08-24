@@ -4,7 +4,7 @@ import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 const Footer = () => {
   return (
     <footer id="contact" className="bg-muted/50 border-t border-border">
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto px-6 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
@@ -41,35 +41,35 @@ const Footer = () => {
           {/* Contact */}
                {/* Contact */}
                  {/* Contact */}
-          <div className="space-y-4">
-            <h3 className="font-semibold">Contact</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start space-x-3 text-muted-foreground">
-                <Mail className="h-4 w-4 mt-0.5 shrink-0" />
+          <div>
+            <h3 className="font-semibold mb-3">Contact</h3>
+            <div className="text-sm space-y-1">
+              <div className="flex items-center space-x-2 text-muted-foreground mb-1">
+                <Mail className="h-4 w-4 shrink-0" />
                 <a href="mailto:customer-care@fluxara.ai" className="hover:text-foreground transition-colors">
-                  customer_care@fluxara.ai
+                  customer-care@fluxara.ai
                 </a>
-              </li>
-              <li className="flex items-start space-x-3 text-muted-foreground">
-                <Phone className="h-4 w-4 mt-0.5 shrink-0" />
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground mb-1">
+                <Phone className="h-4 w-4 shrink-0" />
                 <a href="tel:+1-555-0123" className="hover:text-foreground transition-colors">
                   +1 (555) 012-3456
                 </a>
-              </li>
-              <li className="flex items-start space-x-3 text-muted-foreground">
-                <Linkedin className="h-4 w-4 mt-0.5 shrink-0" />
+              </div>
+              <div className="flex items-center space-x-2 text-muted-foreground mb-1">
+                <Linkedin className="h-4 w-4 shrink-0" />
                 <a href="https://linkedin.com/company/fluxara-ai" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
                   LinkedIn
                 </a>
-              </li>
-              <li className="flex items-start space-x-3 text-muted-foreground">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
+              </div>
+              <div className="flex items-start space-x-2 text-muted-foreground">
+                <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
                 <span>
                   77 Sugar Creek Center Blvd Ste. 600<br />
                   Sugar Land, TX 77478
                 </span>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
 
         </div>
