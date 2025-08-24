@@ -26,7 +26,7 @@ const UseCases = () => {
       description: "This is more than just search. When an operational event occurs, your team can ask plain-language questions and get instant answers sourced directly from your manuals, contracts, and compliance documents, with citations included.",
       benefits: ["Find critical procedures and specs in seconds", "Verify vendor SLAs against real-time performance", "Reduce reliance on institutional knowledge"],
       industries: [],
-      color: "success-green"
+      color: "orange"
     },
     {
       icon: Shield,
@@ -42,10 +42,11 @@ const UseCases = () => {
     <section className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl lg:text-4xl font-bold max-w-3xl mx-auto leading-tight">
-            Solutions for
-            <span className="text-gradient"> Industrial Operations</span>
+          <h2 className="text-3xl lg:text-4xl font-light leading-tight mb-4">
+            <span className="font-semibold text-orange-500">Solutions</span>
+            <span className="font-semibold text-slate-900"> for Industrial Operations</span>
           </h2>
+          <div className="w-16 h-1 bg-orange-500 mb-6 mx-auto"></div>
           <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Our solutions are built on a single, unified platform that combines your real-time operational data with your enterprise documentation to deliver true, end-to-end intelligence.
           </p>
@@ -61,18 +62,8 @@ const UseCases = () => {
               {/* Content side */}
               <div className={`lg:col-span-7 space-y-6 ${index % 2 === 1 ? 'lg:col-start-6 lg:order-2' : ''}`}>
                 <div className={`flex items-center space-x-4 ${index % 2 === 1 ? 'lg:justify-end lg:flex-row-reverse lg:space-x-reverse lg:space-x-4' : ''}`}>
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${
-                    useCase.color === 'tech-blue' ? 'from-tech-blue/20 to-tech-blue/40' :
-                    useCase.color === 'electric-purple' ? 'from-electric-purple/20 to-electric-purple/40' :
-                    useCase.color === 'success-green' ? 'from-success-green/20 to-success-green/40' :
-                    'from-warning-amber/20 to-warning-amber/40'
-                  } flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <useCase.icon className={`h-8 w-8 ${
-                      useCase.color === 'tech-blue' ? 'text-tech-blue' :
-                      useCase.color === 'electric-purple' ? 'text-electric-purple' :
-                      useCase.color === 'success-green' ? 'text-success-green' :
-                      'text-warning-amber'
-                    }`} />
+                  <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <useCase.icon className="h-8 w-8 text-orange-600" />
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {useCase.industries.map((industry, idx) => (
@@ -92,12 +83,7 @@ const UseCases = () => {
                   <ul className="space-y-3">
                     {useCase.benefits.map((benefit, idx) => (
                       <li key={idx} className={`flex items-start space-x-3 ${index % 2 === 1 ? 'lg:flex-row-reverse lg:space-x-reverse lg:space-x-3 lg:text-right' : ''}`}>
-                        <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                          useCase.color === 'tech-blue' ? 'bg-tech-blue' :
-                          useCase.color === 'electric-purple' ? 'bg-electric-purple' :
-                          useCase.color === 'success-green' ? 'bg-success-green' :
-                          'bg-warning-amber'
-                        }`}></div>
+                        <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 bg-orange-500"></div>
                         <span className="text-sm lg:text-base text-muted-foreground">{benefit}</span>
                       </li>
                     ))}
@@ -107,18 +93,8 @@ const UseCases = () => {
 
               {/* Visual side - placeholder for future enhancement */}
               <div className={`lg:col-span-5 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className={`aspect-[4/3] rounded-3xl bg-gradient-to-br ${
-                  useCase.color === 'tech-blue' ? 'from-tech-blue/10 to-tech-blue/20' :
-                  useCase.color === 'electric-purple' ? 'from-electric-purple/10 to-electric-purple/20' :
-                  useCase.color === 'success-green' ? 'from-success-green/10 to-success-green/20' :
-                  'from-warning-amber/10 to-warning-amber/20'
-                } flex items-center justify-center`}>
-                  <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${
-                    useCase.color === 'tech-blue' ? 'from-tech-blue to-tech-blue/80' :
-                    useCase.color === 'electric-purple' ? 'from-electric-purple to-electric-purple/80' :
-                    useCase.color === 'success-green' ? 'from-success-green to-success-green/80' :
-                    'from-warning-amber to-warning-amber/80'
-                  } flex items-center justify-center`}>
+                <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                  <div className="w-24 h-24 rounded-2xl bg-orange-500 flex items-center justify-center">
                     <useCase.icon className="h-12 w-12 text-white" />
                   </div>
                 </div>

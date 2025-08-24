@@ -12,7 +12,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="hover:opacity-80 transition-opacity">
-            <img src="/sustainiq_logo.svg" alt="SustainIQ AI Logo" className="h-14" />
+            <img src="/fluxara_logo.svg" alt="Fluxara AI Logo" className="h-14" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -37,9 +37,9 @@ const Navigation = () => {
             </a>
           </div>
 
-          <a href="mailto:ethiraj.k@sustainiq.ai?subject=Inquiry about SustainIQ AI Platform&body=Hello, I saw your website and I'm interested in learning more about your AI platform. I'd like to schedule a time to discuss an ROI assessment."
+          <a href="mailto:ethiraj.k@fluxara.ai?subject=Inquiry about Fluxara AI Platform&body=Hello, I saw your website and I'm interested in learning more about your AI platform. I'd like to schedule a time to discuss an ROI assessment."
              className="hidden md:block">
-            <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity">
+            <Button className="bg-orange-500 text-white hover:bg-orange-600 transition-colors">
               Get Free Assessment
             </Button>
           </a>
@@ -63,8 +63,8 @@ const Navigation = () => {
                   <Link to="/platform-preview" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Platform Preview</Link>
                   <a href="/#contact" onClick={() => setIsOpen(false)} className="text-lg font-medium hover:text-primary">Contact</a>
                   <div className="pt-8">
-                    <a href="mailto:ethiraj.k@sustainiq.ai?subject=Inquiry about SustainIQ AI Platform&body=Hello, I saw your website and I'm interested in learning more about your AI platform. I'd like to schedule a time to discuss an ROI assessment.">
-                      <Button className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition-opacity">
+                    <a href="mailto:ethiraj.k@fluxara.ai?subject=Inquiry about Fluxara AI Platform&body=Hello, I saw your website and I'm interested in learning more about your AI platform. I'd like to schedule a time to discuss an ROI assessment.">
+                      <Button className="w-full bg-orange-500 text-white hover:bg-orange-600 transition-colors">
                         Get Free Assessment
                       </Button>
                     </a>

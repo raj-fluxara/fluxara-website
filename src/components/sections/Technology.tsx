@@ -20,7 +20,7 @@ const Technology = () => {
       category: "Cloud Infrastructure",
       icon: Cloud,
       technologies: ["Kubernetes", "Microservices", "Auto-Scaling", "Multi-Cloud", "Edge Computing"],
-      color: "success-green"
+      color: "orange"
     },
     {
       category: "Security & Compliance",
@@ -57,10 +57,12 @@ const Technology = () => {
     <section id="technology" className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-3xl lg:text-4xl font-bold max-w-3xl mx-auto leading-tight">
+          <h2 className="text-3xl lg:text-4xl font-light leading-tight mb-4">
             Built on
-            <span className="text-gradient"> Enterprise-Grade Platform</span>
+            <span className="font-semibold text-orange-500"> Enterprise-Grade</span>
+            <span className="font-semibold text-slate-900"> Platform</span>
           </h2>
+          <div className="w-16 h-1 bg-orange-500 mb-6 mx-auto"></div>
           <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Our platform is built on an enterprise-grade technical foundation designed to uniquely unify your operational and documentary data at scale.
           </p>
@@ -72,18 +74,8 @@ const Technology = () => {
             {techStack.map((stack, index) => (
               <div key={index} className="group">
                 <div className="flex items-start space-x-6 p-8 lg:p-10 bg-gradient-to-br from-white/40 via-transparent to-muted/30 rounded-3xl hover:from-white/60 transition-all duration-300">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${
-                    stack.color === 'tech-blue' ? 'from-tech-blue/20 to-tech-blue/40' :
-                    stack.color === 'electric-purple' ? 'from-electric-purple/20 to-electric-purple/40' :
-                    stack.color === 'success-green' ? 'from-success-green/20 to-success-green/40' :
-                    'from-warning-amber/20 to-warning-amber/40'
-                  } flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                    <stack.icon className={`h-8 w-8 ${
-                      stack.color === 'tech-blue' ? 'text-tech-blue' :
-                      stack.color === 'electric-purple' ? 'text-electric-purple' :
-                      stack.color === 'success-green' ? 'text-success-green' :
-                      'text-warning-amber'
-                    }`} />
+                  <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                    <stack.icon className="h-8 w-8 text-orange-600" />
                   </div>
                   <div className="space-y-4 flex-1">
                     <h3 className="text-xl lg:text-2xl font-bold">{stack.category}</h3>
@@ -108,8 +100,8 @@ const Technology = () => {
             {architectureFeatures.map((feature, index) => (
               <div key={index} className="space-y-6">
                 <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-tech-blue/20 to-tech-blue/40 flex items-center justify-center">
-                    <feature.icon className="h-8 w-8 text-tech-blue" />
+                  <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center">
+                    <feature.icon className="h-8 w-8 text-orange-600" />
                   </div>
                   <h4 className="text-2xl lg:text-3xl font-bold">{feature.title}</h4>
                 </div>
@@ -121,7 +113,7 @@ const Technology = () => {
         
         {/* Enterprise Features - centered highlight */}
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-success-green/5 via-transparent to-tech-blue/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-transparent to-slate-50 rounded-3xl"></div>
           <div className="relative text-center py-16 lg:py-20 px-8 lg:px-12">
             <div className="space-y-8 mb-12">
               <h3 className="text-3xl lg:text-4xl font-bold">Enterprise-Ready Features</h3>
@@ -130,19 +122,19 @@ const Technology = () => {
             
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
               <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-success-green">99.99%</div>
+                <div className="text-4xl lg:text-5xl font-bold text-orange-500">99.99%</div>
                 <div className="text-sm lg:text-base text-muted-foreground">Uptime SLA</div>
               </div>
               <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-tech-blue">Secure</div>
+                <div className="text-4xl lg:text-5xl font-bold text-slate-700">Secure</div>
                 <div className="text-sm lg:text-base text-muted-foreground">Enterprise-Grade</div>
               </div>
               <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-electric-purple">24/7</div>
+                <div className="text-4xl lg:text-5xl font-bold text-slate-600">24/7</div>
                 <div className="text-sm lg:text-base text-muted-foreground">Expert Support</div>
               </div>
               <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-warning-amber">Global</div>
+                <div className="text-4xl lg:text-5xl font-bold text-slate-500">Global</div>
                 <div className="text-sm lg:text-base text-muted-foreground">Multi-Region</div>
               </div>
             </div>

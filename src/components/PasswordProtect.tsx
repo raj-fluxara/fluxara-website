@@ -7,7 +7,7 @@ import { ShieldAlert } from 'lucide-react';
 
 // Get the password from environment variables
 const CORRECT_PASSWORD = import.meta.env.VITE_PROTOTYPE_PASSWORD;
-const SESSION_STORAGE_KEY = 'sustainiq-prototype-access';
+const SESSION_STORAGE_KEY = 'fluxara-prototype-access';
 
 interface PasswordProtectProps {
   children: React.ReactNode;
