@@ -78,20 +78,26 @@ export default function Hero() {
 
                {/* Sophisticated CTA design */}
                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                 <a
+                 <motion.a
                    className="inline-flex items-center justify-center h-12 px-6 bg-orange-500 text-white font-medium text-base
-                              hover:bg-orange-600 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                              hover:bg-orange-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
+                              hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transform-gpu"
                    href="#contact"
+                   whileHover={{ scale: 1.02 }}
+                   whileTap={{ scale: 0.98 }}
                  >
                    Get ROI Assessment
-                 </a>
-                 <a
+                 </motion.a>
+                 <motion.a
                    className="inline-flex items-center justify-center h-12 px-6 border border-slate-300 text-slate-700 font-medium text-base
-                              hover:border-slate-400 hover:text-slate-900 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2"
+                              hover:border-orange-300 hover:text-orange-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2
+                              hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transform-gpu"
                    href="#case-studies"
+                   whileHover={{ scale: 1.02 }}
+                   whileTap={{ scale: 0.98 }}
                  >
                    See Case Studies
-                 </a>
+                 </motion.a>
                </div>
 
                {/* Minimal trust indicators */}
@@ -105,24 +111,45 @@ export default function Hero() {
              </div>
            </div>
 
-           {/* Minimal stats sidebar - only visible on larger screens */}
+           {/* Animated stats sidebar - only visible on larger screens */}
            <div className="lg:col-span-4 hidden xl:block">
              <div className="space-y-8 text-right">
                
-               <div>
-                 <div className="text-4xl font-bold text-orange-500 mb-1">$1.8M</div>
+               <motion.div 
+                 className="group p-4 rounded-lg hover:bg-white/50 transition-all duration-300"
+                 initial={{ opacity: 0, x: 20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ delay: 0.5, duration: 0.8 }}
+               >
+                 <div className="text-4xl font-bold text-orange-500 mb-1 group-hover:scale-105 transition-transform duration-300">
+                   <CountUp to={1.8} decimals={1} prefix="$" suffix="M" duration={2.5} />
+                 </div>
                  <div className="text-sm text-slate-500 uppercase tracking-wide">Avg Annual Savings</div>
-               </div>
+               </motion.div>
 
-               <div>
-                 <div className="text-4xl font-bold text-slate-700 mb-1">28%</div>
+               <motion.div 
+                 className="group p-4 rounded-lg hover:bg-white/50 transition-all duration-300"
+                 initial={{ opacity: 0, x: 20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ delay: 0.7, duration: 0.8 }}
+               >
+                 <div className="text-4xl font-bold text-slate-700 mb-1 group-hover:scale-105 transition-transform duration-300">
+                   <CountUp to={28} suffix="%" duration={2.2} />
+                 </div>
                  <div className="text-sm text-slate-500 uppercase tracking-wide">MTTR Reduction</div>
-               </div>
+               </motion.div>
 
-               <div>
-                 <div className="text-4xl font-bold text-slate-600 mb-1">94%</div>
+               <motion.div 
+                 className="group p-4 rounded-lg hover:bg-white/50 transition-all duration-300"
+                 initial={{ opacity: 0, x: 20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ delay: 0.9, duration: 0.8 }}
+               >
+                 <div className="text-4xl font-bold text-slate-600 mb-1 group-hover:scale-105 transition-transform duration-300">
+                   <CountUp to={94} suffix="%" duration={2.8} />
+                 </div>
                  <div className="text-sm text-slate-500 uppercase tracking-wide">Compliance Rate</div>
-               </div>
+               </motion.div>
 
              </div>
            </div>

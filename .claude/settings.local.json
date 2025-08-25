@@ -4,7 +4,8 @@
       "WebFetch(domain:scale.com)",
       "WebFetch(domain:glean.com)",
       "WebFetch(domain:www.hubspot.com)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "WebFetch(domain:hubspot.com)"
     ],
     "deny": [],
     "ask": []
