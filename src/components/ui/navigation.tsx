@@ -17,23 +17,29 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="/#solutions" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
+            <a href="/#solutions" className="relative text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 group">
               Solutions
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-200 group-hover:w-full"></span>
             </a>
-            <a href="/#case-studies" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
+            <a href="/#case-studies" className="relative text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 group">
               Case Studies
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-200 group-hover:w-full"></span>
             </a>
-            <a href="/#technology" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
+            <a href="/#technology" className="relative text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 group">
               Technology
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-200 group-hover:w-full"></span>
             </a>
-            <Link to="/blog" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
+            <Link to="/blog" className="relative text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 group">
               Blog
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <Link to="/platform-preview" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
+            <Link to="/platform-preview" className="relative text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 group">
               Platform Preview
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-200 group-hover:w-full"></span>
             </Link>
-            <a href="/#contact" className="text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 hover:scale-105">
+            <a href="/#contact" className="relative text-slate-700 hover:text-orange-500 font-semibold transition-all duration-200 group">
               Contact
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-200 group-hover:w-full"></span>
             </a>
           </div>
 

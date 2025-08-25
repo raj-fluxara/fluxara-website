@@ -1,5 +1,6 @@
 import Navigation from "@/components/ui/navigation";
 import Hero from "@/components/sections/Hero";
+import CustomerLogos from "@/components/sections/CustomerLogos";
 import ValueProposition from "@/components/sections/ValueProposition";
 import UseCases from "@/components/sections/UseCases";
 import CaseStudies from "@/components/sections/CaseStudies";
@@ -13,6 +14,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
+      <CustomerLogos />
       <ValueProposition />
       <UseCases />
       <CaseStudies />

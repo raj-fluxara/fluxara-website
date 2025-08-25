@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Brain, Database, Gauge, Lock } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ValueProposition = () => {
   const values = [
@@ -50,13 +51,23 @@ const ValueProposition = () => {
         <div className="space-y-20">
           
           {/* Problem 1 - Highlighted main feature */}
-          <div className="border-l-4 border-orange-500 pl-8">
+          <motion.div 
+            className="border-l-4 border-orange-500 pl-8"
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <div className="grid lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                  <motion.div 
+                    className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 shadow-sm hover:bg-orange-200 transition-all duration-200 cursor-pointer"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
                     <Brain className="h-5 w-5 text-orange-600" />
-                  </div>
+                  </motion.div>
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-semibold text-slate-900 leading-tight">
                   Your SCADA alerts don't include the <span className="text-orange-500">fix</span>
@@ -74,16 +85,26 @@ const ValueProposition = () => {
                 </blockquote>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Problems 2 & 3 - Side by side */}
           <div className="grid lg:grid-cols-2 gap-16">
             
-            <div className="space-y-4">
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                <motion.div 
+                  className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 shadow-sm hover:bg-orange-200 transition-all duration-200 cursor-pointer"
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <Gauge className="h-5 w-5 text-orange-600" />
-                </div>
+                </motion.div>
               </div>
               <h3 className="text-xl lg:text-2xl font-semibold text-slate-900">
                 Alerts without context are just <span className="text-orange-500">noise</span>
@@ -91,13 +112,23 @@ const ValueProposition = () => {
               <p className="text-slate-600 leading-relaxed">
                 {values[1].description}
               </p>
-            </div>
+            </motion.div>
 
-            <div className="space-y-4">
+            <motion.div 
+              className="space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 shadow-sm">
+                <motion.div 
+                  className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-4 shadow-sm hover:bg-orange-200 transition-all duration-200 cursor-pointer"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <Database className="h-5 w-5 text-orange-600" />
-                </div>
+                </motion.div>
               </div>
               <h3 className="text-xl lg:text-2xl font-semibold text-slate-900">
                 Siloed systems, <span className="text-orange-500">scattered</span> knowledge
@@ -105,17 +136,27 @@ const ValueProposition = () => {
               <p className="text-slate-600 leading-relaxed">
                 {values[2].description}
               </p>
-            </div>
+            </motion.div>
 
           </div>
 
           {/* Problem 4 - Full width with emphasis */}
-          <div className="bg-slate-50 rounded-lg p-8 lg:p-12 border border-slate-200">
+          <motion.div 
+            className="bg-slate-50 rounded-lg p-8 lg:p-12 border border-slate-200 hover:border-orange-200 transition-colors duration-300"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center justify-center mb-6">
-                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center shadow-md">
+                <motion.div 
+                  className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center shadow-md hover:bg-orange-200 transition-all duration-200 cursor-pointer"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  whileTap={{ scale: 0.9 }}
+                >
                   <Lock className="h-6 w-6 text-orange-600" />
-                </div>
+                </motion.div>
               </div>
               <h3 className="text-2xl lg:text-3xl font-semibold text-slate-900 text-center mb-4">
                 Compliance is <span className="text-orange-500">reactive</span>, not proactive
@@ -124,7 +165,7 @@ const ValueProposition = () => {
                 {values[3].description}
               </p>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

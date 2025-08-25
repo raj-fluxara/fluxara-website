@@ -107,7 +107,25 @@ export default function PrototypeDashboard() {
   const [assets] = useState<Asset[]>(INITIAL_ASSETS)
   const [alerts] = useState<SystemAlert[]>(INITIAL_ALERTS)
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null)
+  const [isInitialLoading, setIsInitialLoading] = useState(true)
+  const [loadingProgress, setLoadingProgress] = useState(0)
   const { data, now } = useTelemetryData(20, 3000)
+
+  // Simulate initial loading with progress
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setLoadingProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(timer)
+          setTimeout(() => setIsInitialLoading(false), 500)
+          return 100
+        }
+        return prev + Math.random() * 15 + 5
+      })
+    }, 200)
+    
+    return () => clearInterval(timer)
+  }, [])
 
   const stats = useMemo(() => {
     const counts = { normal: 0, warning: 0, critical: 0, total: assets.length }
@@ -125,50 +143,117 @@ export default function PrototypeDashboard() {
     setTimeout(() => setScreen("report"), 2500)
   }
 
+  /** Initial Loading Screen */
+  if (isInitialLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
+        <div className="text-center space-y-8 max-w-md mx-auto px-6">
+          <div className="space-y-4">
+            <div className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto">
+              <div className="w-12 h-12 border-4 border-orange-500/30 border-t-orange-500 rounded-full animate-spin"></div>
+            </div>
+            <div className="space-y-2">
+              <h2 className="text-2xl font-semibold text-slate-900">Loading Platform Demo</h2>
+              <p className="text-slate-600">Connecting to real-time data streams...</p>
+            </div>
+          </div>
+          
+          {/* Progress bar */}
+          <div className="space-y-3">
+            <div className="w-full bg-slate-200 rounded-full h-2">
+              <div 
+                className="bg-orange-500 h-2 rounded-full transition-all duration-300 ease-out"
+                style={{ width: `${Math.min(loadingProgress, 100)}%` }}
+              ></div>
+            </div>
+            <p className="text-sm text-slate-500">
+              {loadingProgress < 100 ? `${Math.round(loadingProgress)}%` : 'Almost ready...'}
+            </p>
+          </div>
+          
+          {/* Loading steps */}
+          <div className="text-left space-y-2 text-sm text-slate-600">
+            <div className="flex items-center space-x-2">
+              <div className={`w-2 h-2 rounded-full transition-colors duration-300 ${loadingProgress > 20 ? 'bg-green-500' : 'bg-slate-300'}`}></div>
+              <span className={loadingProgress > 20 ? 'text-slate-700' : 'text-slate-400'}>Initializing SCADA connections</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className={`w-2 h-2 rounded-full transition-colors duration-300 ${loadingProgress > 50 ? 'bg-green-500' : 'bg-slate-300'}`}></div>
+              <span className={loadingProgress > 50 ? 'text-slate-700' : 'text-slate-400'}>Loading equipment telemetry</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className={`w-2 h-2 rounded-full transition-colors duration-300 ${loadingProgress > 80 ? 'bg-green-500' : 'bg-slate-300'}`}></div>
+              <span className={loadingProgress > 80 ? 'text-slate-700' : 'text-slate-400'}>Analyzing current alerts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   /** Screen: Investigation */
   if (screen === "investigation") {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-background to-muted flex items-center justify-center">
-        <div className="text-center space-y-8">
-          <div className="space-y-2">
-            <h2 className="text-2xl font-semibold text-foreground">AI Investigation in Progress…</h2>
-            <p className="text-muted-foreground">Analyzing {selectedAsset?.name} patterns</p>
+      <div className="min-h-screen bg-gradient-to-br from-background to-muted flex items-center justify-center p-6">
+        <div className="text-center space-y-12 max-w-2xl mx-auto">
+          <div className="space-y-4">
+            <h2 className="text-3xl font-semibold text-foreground">AI Investigation in Progress</h2>
+            <p className="text-lg text-muted-foreground">Analyzing {selectedAsset?.name} telemetry and cross-referencing with OEM documentation</p>
           </div>
 
-          <div className="flex items-center justify-center space-x-8">
-            <div className="flex flex-col items-center space-y-2">
-              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center animate-pulse">
-                <Activity className="w-8 h-8 text-orange-600 animate-bounce" />
+          <div className="flex items-center justify-center space-x-12">
+            <div className="flex flex-col items-center space-y-3">
+              <div className="relative">
+                <div className="w-20 h-20 bg-orange-500/10 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 border-4 border-orange-500/20 border-t-orange-500 rounded-full animate-spin"></div>
+                  <Activity className="w-8 h-8 text-orange-600 absolute animate-pulse" />
+                </div>
+                <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center animate-bounce">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
               </div>
-              <span className="text-sm text-muted-foreground">Data Stream</span>
+              <span className="text-sm font-medium text-muted-foreground">Live Data Stream</span>
             </div>
-            <div className="text-muted-foreground/60 animate-pulse">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center animate-pulse">
-                <FileText className="w-8 h-8 text-orange-600 animate-bounce" />
+            
+            <div className="flex flex-col items-center space-y-2 animate-pulse">
+              <div className="flex space-x-1">
+                <div className="w-2 h-8 bg-orange-500/60 rounded animate-pulse" style={{animationDelay: '0s'}}></div>
+                <div className="w-2 h-6 bg-orange-500/40 rounded animate-pulse" style={{animationDelay: '0.1s'}}></div>
+                <div className="w-2 h-4 bg-orange-500/60 rounded animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                <div className="w-2 h-7 bg-orange-500/80 rounded animate-pulse" style={{animationDelay: '0.3s'}}></div>
               </div>
-              <span className="text-sm text-muted-foreground">Analysis</span>
+              <span className="text-xs text-muted-foreground">Processing</span>
             </div>
-            <div className="text-muted-foreground/60 animate-pulse">
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center animate-pulse">
-                <Zap className="w-8 h-8 text-white animate-spin" />
+
+            <div className="flex flex-col items-center space-y-3">
+              <div className="relative">
+                <div className="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center">
+                  <div className="w-16 h-16 border-4 border-blue-500/20 border-r-blue-500 rounded-full animate-spin" style={{animationDirection: 'reverse'}}></div>
+                  <FileText className="w-8 h-8 text-blue-600 absolute animate-pulse" />
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center animate-bounce" style={{animationDelay: '0.5s'}}>
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
+                </div>
               </div>
-              <span className="text-sm text-muted-foreground">Fluxara</span>
+              <span className="text-sm font-medium text-muted-foreground">OEM Manuals</span>
+            </div>
+          </div>
+          
+          {/* Analysis Steps */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span>Cross-referencing with maintenance procedures...</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
+              <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse" style={{animationDelay: '0.3s'}}></div>
+              <span>Generating actionable work instructions...</span>
             </div>
           </div>
 
-          <div className="w-64 mx-auto">
-            <div className="w-full bg-muted rounded-full h-2">
-              <div className="bg-orange-500 h-2 rounded-full animate-pulse" style={{ width: "75%" }} />
+          <div className="w-80 mx-auto">
+            <div className="w-full bg-slate-200 rounded-full h-3">
+              <div className="bg-gradient-to-r from-orange-500 to-orange-600 h-3 rounded-full animate-pulse transition-all duration-1000" style={{ width: "75%" }} />
             </div>
           </div>
         </div>
