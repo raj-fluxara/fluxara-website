@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { ShieldAlert } from 'lucide-react';
 
-// Get the password from environment variables
-const CORRECT_PASSWORD = import.meta.env.VITE_PROTOTYPE_PASSWORD;
+// Get the password from environment variables with fallback
+const CORRECT_PASSWORD = import.meta.env.VITE_PROTOTYPE_PASSWORD || 'SAI123';
 const SESSION_STORAGE_KEY = 'fluxara-prototype-access';
 
 interface PasswordProtectProps {
@@ -52,6 +52,11 @@ const PasswordProtect = ({ children }: PasswordProtectProps) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoFocus
+              className="!border-gray-300 focus-visible:!border-orange-500 focus-visible:!ring-orange-500 focus:!border-orange-500 focus:!ring-orange-500 !ring-orange-500"
+              style={{
+                borderColor: '#d1d5db',
+                '--tw-ring-color': '#f97316'
+              } as React.CSSProperties}
             />
             {error && (
               <Alert variant="destructive">
@@ -60,7 +65,7 @@ const PasswordProtect = ({ children }: PasswordProtectProps) => {
                 <AlertDescription>{error}</AlertDescription>
               </Alert>
             )}
-           <Button type="submit" className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90">
+           <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium transition-colors duration-200">
                Unlock
              </Button>
           </form>
