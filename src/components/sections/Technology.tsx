@@ -1,142 +1,85 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Layers, Brain, Database, Cloud, Lock, Zap, Share2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Brain, Zap, Share2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Technology = () => {
-  const techStack = [
+  const coreAdvantages = [
     {
-      category: "AI & Machine Learning",
-      icon: Brain,
-      technologies: ["Large Language Models", "Multi-Agent Systems", "Time-Series Forecasting", "Computer Vision", "RAG Pipelines"],
-      color: "tech-blue"
+      title: "AI That Actually Works",
+      description: "Advanced ML models reduce false alarms by 85% while catching subtle equipment issues before they become failures.",
+      icon: Brain
     },
     {
-      category: "Data Engineering",
-      icon: Database,
-      technologies: ["Real-Time Streaming", "Data Lakes", "ETL Pipelines", "Time-Series DBs", "Vector Databases"],
-      color: "electric-purple"
+      title: "Autonomous Investigation",
+      description: "Multi-agent AI system automatically investigates anomalies, searches your manuals, and provides complete diagnostic reports.",
+      icon: Share2
     },
     {
-      category: "Cloud Infrastructure",
-      icon: Cloud,
-      technologies: ["Kubernetes", "Microservices", "Auto-Scaling", "Multi-Cloud", "Edge Computing"],
-      color: "orange"
-    },
-    {
-      category: "Security & Compliance",
-      icon: Lock,
-      technologies: ["Zero Trust", "Encryption", "Audit Trails", "RBAC", "Enterprise Security"],
-      color: "warning-amber"
+      title: "Minutes, Not Hours",
+      description: "Complete root cause analysis and repair recommendations delivered in minutes instead of days of manual investigation.",
+      icon: Zap
     }
   ];
 
-  const architectureFeatures = [
-    {
-      title: "Retrieval-Augmented Generation",
-      description: "Advanced RAG implementations that combine your enterprise data with large language models. This is the core technology that allows our platform to read your manuals and connect them to real-time events.",
-      icon: Layers
-    },
-    {
-      title: "Real-Time Processing",
-      description: "Stream processing architectures capable of handling massive telemetry volumes with sub-second latency. This ensures that insights from your operational data are delivered instantly, preventing costly delays.",
-      icon: Zap
-    },
-    {
-      title: "Modern Data Stack",
-      description: "Cloud-native data platforms built for scale, flexibility, and enterprise security. This robust foundation allows us to seamlessly integrate with your existing systems, both on-premise and in the cloud.",
-      icon: Database
-    },
-    {
-      title: "Multi-Agent AI Architecture",
-      description: "Our platform is built on a sophisticated multi-agent architecture. Specialized AI agents—like our Context Agent, Knowledge Agent, and Reasoning Agent—collaborate to automate complex tasks, from diagnosing equipment failures to ensuring regulatory compliance. This modular approach provides greater accuracy, transparency, and scalability than monolithic AI models.",
-      icon: Share2
-    }
-  ];
 
   return (
     <section id="technology" className="py-24">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-3xl lg:text-4xl font-light leading-tight mb-4">
-            Built on
-            <span className="font-semibold text-orange-500"> Enterprise-Grade</span>
-            <span className="font-semibold text-slate-900"> Platform</span>
+            <span className="font-semibold text-orange-500">Technology</span>
+            <span className="font-semibold text-slate-900"> That Delivers Results</span>
           </h2>
           <div className="w-16 h-1 bg-orange-500 mb-6 mx-auto"></div>
           <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Our platform is built on an enterprise-grade technical foundation designed to uniquely unify your operational and documentary data at scale.
+            We don't just give you alerts—we give you complete answers with actionable repair plans.
           </p>
         </div>
         
-        {/* Technology Stack - flowing layout */}
+        {/* Core Technical Advantages */}
         <div className="mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {techStack.map((stack, index) => (
-              <div key={index} className="group">
-                <div className="flex items-start space-x-6 p-8 lg:p-10 bg-gradient-to-br from-white/40 via-transparent to-muted/30 rounded-3xl hover:from-white/60 transition-all duration-300">
-                  <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-                    <stack.icon className="h-8 w-8 text-orange-600" />
-                  </div>
-                  <div className="space-y-4 flex-1">
-                    <h3 className="text-xl lg:text-2xl font-bold">{stack.category}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {stack.technologies.map((tech, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs border-muted-foreground/30">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {coreAdvantages.map((advantage, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center group"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform duration-300">
+                  <advantage.icon className="h-8 w-8 text-orange-600" />
                 </div>
-              </div>
+                <h4 className="text-xl font-bold mb-4">{advantage.title}</h4>
+                <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
         
-        {/* Architecture Features - modern grid */}
-        <div className="mb-16">
-          <h3 className="text-2xl lg:text-3xl font-bold text-center mb-12">Reference Architectures</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-            {architectureFeatures.map((feature, index) => (
-              <div key={index} className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center">
-                    <feature.icon className="h-8 w-8 text-orange-600" />
-                  </div>
-                  <h4 className="text-2xl lg:text-3xl font-bold">{feature.title}</h4>
-                </div>
-                <p className="text-muted-foreground leading-relaxed text-base lg:text-lg">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
         
-        {/* Enterprise Features - centered highlight */}
+        {/* Our Value Proposition - centered highlight */}
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-transparent to-slate-50 rounded-3xl"></div>
-          <div className="relative text-center py-16 lg:py-20 px-8 lg:px-12">
-            <div className="space-y-8 mb-12">
-              <h3 className="text-3xl lg:text-4xl font-bold">Enterprise-Ready Features</h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Built for mission-critical applications in regulated industries</p>
+          <div className="relative text-center py-12 lg:py-16 px-8 lg:px-12">
+            <div className="space-y-8 mb-8">
+              <h3 className="text-2xl lg:text-3xl font-bold">Beyond Traditional Monitoring</h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Our AI doesn't just detect problems—it investigates, diagnoses, and provides actionable repair plans automatically.
+              </p>
             </div>
             
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-orange-500">99.99%</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Uptime SLA</div>
-              </div>
-              <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-slate-700">Secure</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Enterprise-Grade</div>
-              </div>
-              <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-slate-600">24/7</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Expert Support</div>
-              </div>
-              <div className="space-y-3">
-                <div className="text-4xl lg:text-5xl font-bold text-slate-500">Global</div>
-                <div className="text-sm lg:text-base text-muted-foreground">Multi-Region</div>
-              </div>
+            <div className="text-center mb-6">
+              <Link to="/technology">
+                <Button variant="outline" size="lg" className="group">
+                  Learn How It Works
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

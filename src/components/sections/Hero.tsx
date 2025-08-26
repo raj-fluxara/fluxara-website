@@ -9,14 +9,20 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
+import DataTransformationBackground from "../DataTransformationBackground";
+import SimpleTestBackground from "../SimpleTestBackground";
 
 export default function Hero() {
   return (
     <section className="relative flex items-center bg-gradient-to-br from-slate-50 via-white to-gray-100 print:overflow-visible print:bg-white min-h-[70vh] sm:min-h-[70vh] pt-24 sm:pt-20 safe-top overflow-hidden">
-        {/* Industrial background patterns */}
-        <div className="pointer-events-none absolute inset-0">
+        
+        {/* 3D Animated Background - Data Transformation */}
+        <DataTransformationBackground className="print:hidden" />
+        
+        {/* Fallback: Industrial background patterns (for when Three.js isn't available) */}
+        <div className="pointer-events-none absolute inset-0 print:hidden">
           {/* Grid pattern suggesting industrial blueprints */}
-          <div className="absolute inset-0 opacity-20" style={{
+          <div className="absolute inset-0 opacity-10" style={{
             backgroundImage: `
               linear-gradient(90deg, rgba(100, 116, 139, 0.15) 1px, transparent 1px),
               linear-gradient(180deg, rgba(100, 116, 139, 0.15) 1px, transparent 1px)
@@ -24,7 +30,7 @@ export default function Hero() {
             backgroundSize: '50px 50px'
           }} />
           {/* Diagonal lines for depth */}
-          <div className="absolute inset-0 opacity-10" style={{
+          <div className="absolute inset-0 opacity-5" style={{
             backgroundImage: `
               repeating-linear-gradient(
                 45deg,
@@ -36,13 +42,6 @@ export default function Hero() {
             `
           }} />
         </div>
-
-        {/* Subtle floating elements - reduced and repositioned */}
-        <div className="pointer-events-none absolute top-20 right-20 h-32 w-32 animate-float rounded-full bg-orange-500/10 blur-2xl print:hidden will-change-transform" />
-        <div
-          className="pointer-events-none absolute bottom-20 left-20 h-24 w-24 animate-float rounded-full bg-tech-blue/8 blur-xl print:hidden will-change-transform"
-          style={{ animationDelay: "1.2s" }}
-        />
 
       {/* Scale.com-style centered layout */}
        <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl">
@@ -72,7 +71,7 @@ export default function Hero() {
                  </div>
 
                  <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl font-light">
-                   For Energy, Oil & Gas, and Manufacturing. We connect your operational data with equipment manuals and procedures to predict failures, automate compliance, and optimize workflows.
+                   Transform scattered operational data into actionable insights with AI. Connect equipment sensors, maintenance records, and compliance documentation to predict failures before they happen and optimize your entire operation.
                  </p>
                </div>
 
