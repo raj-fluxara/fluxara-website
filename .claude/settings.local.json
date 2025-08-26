@@ -5,7 +5,10 @@
       "WebFetch(domain:glean.com)",
       "WebFetch(domain:www.hubspot.com)",
       "Bash(grep:*)",
-      "WebFetch(domain:hubspot.com)"
+      "WebFetch(domain:hubspot.com)",
+      "Bash(npm run dev:*)",
+      "Bash(npx tsc:*)",
+      "Bash(yarn add:*)"
     ],
     "deny": [],
     "ask": []
